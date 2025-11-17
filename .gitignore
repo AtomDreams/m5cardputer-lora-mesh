@@ -1,0 +1,23 @@
+# Arduino
+*.ino.hex
+*.ino.elf
+*.ino.with_bootloader.bin
+*.bin
+*.o
+*.d
+.build/
+!src/
+
+# IDE
+.vscode/
+.vs/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+paste.txt
