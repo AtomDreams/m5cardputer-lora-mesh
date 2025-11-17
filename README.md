@@ -24,10 +24,16 @@ This repository contains an Arduino sketch for the M5Cardputer board, implementi
 - Tools: esptool.py (for erase_flash), M5Burner (logs), anrijs.lv/meshlog (EU868 monitor). [web:746]
 
 ## Installation
-1. Clone: `git clone https://github.com/AtomDreams/m5cardputer-lora-mesh.git`
+1. Clone:
+
+git clone https://github.com/AtomDreams/m5cardputer-lora-mesh.git
+
 2. Open `sketch_nov17a.ino` in Arduino IDE.
 3. Board: "ESP32S3 Dev Module" > Partition: "Minimal SPIFFS" > Debug: "None".
-4. Upload (hold BOOT, Ctrl+U). Erase first if core dump: `esptool.py --chip esp32s3 --port /dev/ttyACM0 erase_flash`.
+4. Upload (hold BOOT, Ctrl+U). Erase first if core dump:
+
+esptool.py --chip esp32s3 --port /dev/ttyACM0 erase_flash
+
 5. Open Serial Monitor (115200 baud) for AT logs. [web:764][web:770]
 
 ## Usage
@@ -36,6 +42,7 @@ This repository contains an Arduino sketch for the M5Cardputer board, implementi
 - Monitor: M5 Display shows "Public TX OK!" or "RX: [decoded msg]".
 - Meshlog: Post-TX, check https://anrijs.lv/meshlog/ (zoom Riga/Mārupe, filter freq 868100000 Hz / SF12 / BW125kHz / last 10min; search hex "48656C6C6F" for decoded msg, RSSI >-110dBm).
 - Example code snippet (PSEND):
+
 String hexMsg = "48656C6C6F206D6573636F72652074657374"; // "Hello mescore test"
 probeCmd("AT+PSEND=" + hexMsg);
 
@@ -60,3 +67,4 @@ Outdoor LOS test: 100m+ clear south Riga, antenna up — expect +EVT:TXP2P DONE 
 
 ## License
 MIT License — see LICENSE file. Credits: Based on M5Stack/RUI4 examples. [web:873]
+
